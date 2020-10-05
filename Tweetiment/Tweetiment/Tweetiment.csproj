@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tweetiment.Abstractions\Tweetiment.Abstractions.csproj" />
+    <ProjectReference Include="..\Tweetiment.Service\Tweetiment.Service.csproj" />
+  </ItemGroup>
+
 </Project>
