@@ -50,16 +50,39 @@ a, .btn-link {
     }
 
 
-    .topBarSourceCodeLink{
-        color: rgba(60, 60, 60, 0.85);
-        font-family: Verdana;
-        font-weight: 500;
-        letter-spacing: 0.005em;
-        word-spacing: 0.005em;
-        text-decoration: none !important;
+.topBarSourceCodeLink {
+    color: rgba(60, 60, 60, 0.85);
+    font-family: Verdana;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    word-spacing: 0.005em;
+    text-decoration: none !important;
+}
+
+    .topBarSourceCodeLink:hover {
+        text-decoration: none;
+        color: rgba(120, 120, 120, 0.80);
     }
 
-        .topBarSourceCodeLink:hover {
-            text-decoration: none;
-            color: rgba(120, 120, 120, 0.80);
-        }
+
+.taskStatus {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+   .info {
+        color: #17a2b8;
+    }
+
+   .ok {
+        color: #28a745;
+    }
+
+     .warn {
+        color: #ffc107;
+    }
+
+    .error {
+        color: #dc3545;
+    }
