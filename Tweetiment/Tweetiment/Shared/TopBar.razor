@@ -1,11 +1,17 @@
 ﻿<nav class="navbar navbar-expand navbar-light bg-white topbar mb-5 static-top shadow">
-    <h1 class="h3 mb-0 text-gray-800">@Title</h1>
+    <h1 class="h3 mb-0 text-gray-800">
+        @Title&nbsp;
+        @if (!string.IsNullOrWhiteSpace(Status))
+        {
+            <span class="badge badge-@GetBadge()">@Status</span>
+        }
+    </h1>
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow mx-1">
-            <NavLink href="Configure" role="button" aria-haspopup="false" aria-expanded="false" class="configureButtonTop">
-                <i class="fas fa-wrench"></i>
-            </NavLink>
+            <a href="https://github.com/selimser/tweetiment" role="button" aria-haspopup="false" aria-expanded="false" class="topBarSourceCodeLink">
+                Source code <i class="fab fa-github"></i>
+            </a>
         </li>
     </ul>
 </nav>
@@ -13,4 +19,25 @@
 @code {
     [Parameter]
     public string Title { get; set; }
+
+    [Parameter]
+    public string Status { get; set; }
+
+    private string GetBadge()
+    {
+        if (Status == "Idle")
+        {
+            return "secondary";
+        }
+        else if (Status == "Working")
+        {
+            return "warning";
+        }
+        else if (Status == "Done")
+        {
+            return "success";
+        }
+
+        return "secondary";
+    }
 }

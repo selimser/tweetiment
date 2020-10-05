@@ -48,3 +48,18 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+
+    .topBarSourceCodeLink{
+        color: rgba(60, 60, 60, 0.85);
+        font-family: Verdana;
+        font-weight: 500;
+        letter-spacing: 0.005em;
+        word-spacing: 0.005em;
+        text-decoration: none !important;
+    }
+
+        .topBarSourceCodeLink:hover {
+            text-decoration: none;
+            color: rgba(120, 120, 120, 0.80);
+        }
