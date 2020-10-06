@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tweetiment", "Tweetiment\Tweetiment.csproj", "{4B148C3B-2312-42E8-83B3-2F5B8524E7BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweetiment.Service", "Tweetiment.Service\Tweetiment.Service.csproj", "{5D301DC2-8BAD-4189-A89D-FF014707C01A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tweetiment.Service", "Tweetiment.Service\Tweetiment.Service.csproj", "{5D301DC2-8BAD-4189-A89D-FF014707C01A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweetiment.Abstractions", "..\Tweetiment.Abstractions\Tweetiment.Abstractions.csproj", "{135B1CFD-350D-4A45-BE82-9ACAE6E28253}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tweetiment.Abstractions", "..\Tweetiment.Abstractions\Tweetiment.Abstractions.csproj", "{135B1CFD-350D-4A45-BE82-9ACAE6E28253}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweetiment.Core", "Tweetiment.Core\Tweetiment.Core.csproj", "{EB02346F-257F-4063-86C5-8E4B265D7DA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{135B1CFD-350D-4A45-BE82-9ACAE6E28253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{135B1CFD-350D-4A45-BE82-9ACAE6E28253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{135B1CFD-350D-4A45-BE82-9ACAE6E28253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB02346F-257F-4063-86C5-8E4B265D7DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB02346F-257F-4063-86C5-8E4B265D7DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB02346F-257F-4063-86C5-8E4B265D7DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB02346F-257F-4063-86C5-8E4B265D7DA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

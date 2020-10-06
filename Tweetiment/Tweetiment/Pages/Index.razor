@@ -1,5 +1,9 @@
 ﻿@page "/"
 
+@using Tweetiment.Abstractions.Response.TwitterSearchResponse;
+@using Tweetiment.Abstractions.Request;
+@inject Tweetiment.Service.Twitter.ITwitterService TwitterService
+
 <TopBar Title="Tweetiment.NET" Status="Idle" />
 <div class="ml-5 mr-5">
 
@@ -17,16 +21,13 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">#</span>
                                 </div>
-                                <input id="tweetHistoryLimitCount" type="text" class="form-control" placeholder="eg. 1000" aria-label="Username" aria-describedby="basic-addon1">
+                                <input id="tweetHistoryLimitCount" type="text" class="form-control" placeholder="eg. 1000" aria-label="tweetHistoryLimitCount" aria-describedby="basic-addon1">
                             </div>
                         </div>
                         <div class="col-7">
-                            <label for="twitterUsername">Twitter Handle:</label>
+                            <label for="searchTerm">Search Term:</label>
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">@@</span>
-                                </div>
-                                <input id="twitterUsername" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                <input id="searchTerm" type="text" class="form-control" placeholder="e.g. Turkish Kebabs" aria-label="searchTerm" aria-describedby="basic-addon1">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Run Analysis</button>
                                     <div class="dropdown-menu">
@@ -111,3 +112,25 @@
 
 
 </div>
+
+
+@code{
+    private async Task<TwitterSearchResponse> GetTwitterSearchResponseAsync()
+    {
+        var twitterSearchRequest = new TwitterSearchRequest
+        {
+            MaxResults = 10,
+            Query = "",
+            TweetFields = new[] { "", "" },
+            UserFields = new[] { "", "" }
+        };
+
+        var result = await TwitterService.SearchForTweetsAsync(twitterSearchRequest);
+
+
+        return new TwitterSearchResponse();
+    }
+
+
+}
+}

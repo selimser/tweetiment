@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Tweetiment.Abstractions\Tweetiment.Abstractions.csproj" />
+    <ProjectReference Include="..\Tweetiment.Core\Tweetiment.Core.csproj" />
     <ProjectReference Include="..\Tweetiment.Service\Tweetiment.Service.csproj" />
   </ItemGroup>
 
