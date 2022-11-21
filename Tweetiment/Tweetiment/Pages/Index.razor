@@ -1,0 +1,136 @@
+﻿@page "/"
+
+@using Tweetiment.Abstractions.Response.TwitterSearchResponse;
+@using Tweetiment.Abstractions.Request;
+@inject Tweetiment.Service.Twitter.ITwitterService TwitterService
+
+<TopBar Title="Tweetiment.NET" Status="Idle" />
+<div class="ml-5 mr-5">
+
+    <div class="card">
+        <div class="card-header">
+            Configure New Run
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="tweetHistoryLimitCount">Limit Tweet History Count:</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">#</span>
+                                </div>
+                                <input id="tweetHistoryLimitCount" type="text" class="form-control" placeholder="eg. 1000" aria-label="tweetHistoryLimitCount" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <label for="searchTerm">Search Term:</label>
+                            <div class="input-group mb-3">
+                                <input id="searchTerm" type="text" class="form-control" placeholder="e.g. Turkish Kebabs" aria-label="searchTerm" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Run Analysis</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Today so far</a>
+                                        <div role="separator" class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">3 days</a>
+                                        <a class="dropdown-item" href="#">5 days</a>
+                                        <a class="dropdown-item" href="#">7 days</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    Fetching Tweets <span class="taskStatus ok"><i class="fas fa-check" /></span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    Analysing Data <i class="fas fa-hourglass-half taskStatus info" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    Fetching Tweets
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    Fetching Tweets
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+@code{
+    private async Task<TwitterSearchResponse> GetTwitterSearchResponseAsync()
+    {
+        var twitterSearchRequest = new TwitterSearchRequest
+        {
+            MaxResults = 10,
+            Query = "",
+            TweetFields = new[] { "", "" },
+            UserFields = new[] { "", "" }
+        };
+
+        var result = await TwitterService.SearchForTweetsAsync(twitterSearchRequest);
+
+
+        return new TwitterSearchResponse();
+    }
+
+
+}
+}
